@@ -1,6 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import { Nav } from './nav/nav';
 import { Home } from './pages/Home/home';
+import { Discovery } from './pages/Discovery/discovery';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
@@ -48,7 +50,13 @@ export function App(){
       </header>
       <main>
         <Nav/>
-        <Home/>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/Discovery' element={<Discovery/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
+        </Routes>
+        {/* <Home/> */}
       </main>
     </>
   );
