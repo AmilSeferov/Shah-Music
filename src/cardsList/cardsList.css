@@ -1,0 +1,20 @@
+.cardsList{display: flex;
+ flex-direction: column;
+ h1{
+    padding: 10px;
+    font-family: "Playwrite AU VIC";
+    font-size: 20px;
+ }
+    .list{
+        overflow-x: hidden;
+        /* margin-top: 10px; */
+        display: flex;
+
+    }
+    .list:hover{
+        overflow-x: auto;
+        scrollbar-color:  rgb(67, 67, 66) black;
+        scroll-behavior: smooth;
+    }
+}
+   
