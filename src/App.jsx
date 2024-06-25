@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 import './App.css'
 import { Nav } from './nav/nav';
 import { Home } from './pages/Home/home';
@@ -6,9 +6,7 @@ import { Discovery } from './pages/Discovery/discovery';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
-  
-  return (
-    <>
+  return <>
       <header>
         <div className="left-content">
           <label className="burger" htmlFor="burger">
@@ -50,14 +48,16 @@ export function App(){
       </header>
       <main>
         <Nav/>
-        <Routes>
+        <aside>
+        <Routes >
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Discovery' element={<Discovery/>}></Route>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/' element={<Home/>}></Route>
         </Routes>
+        </aside>
         {/* <Home/> */}
       </main>
     </>
-  );
+  
 };
