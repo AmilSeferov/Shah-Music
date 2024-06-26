@@ -7,7 +7,8 @@ import { useState } from 'react';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
-  const [style,setstyle]=useState(false)
+  const [add,setadd]=useState(false);
+  const [style,setstyle]=useState(false);
   return <>
       <header>
         <div  onClick={()=>{
@@ -69,6 +70,22 @@ export function App(){
         </aside>
         {/* <Home/> */}
       </main>
+      <div style={add?{display:'flex'}:{display:'none'}} className="addListContainer">
+        <form action="">
+        <input type="text" />
+        <input type="text" />
+        <select name="" id="">
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+        </select>
+        </form>
+        <div>
+          <button className='cancel'>Cancel</button>
+          <button className='add'>Add</button>
+        </div>
+        
+      </div>
     </>
   
 };
