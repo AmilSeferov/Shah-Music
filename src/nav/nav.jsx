@@ -53,13 +53,56 @@ return<>
   <span className="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
 </button>
 <ul className='list'>
-    <li></li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
+    <li>
+        <p className='listName'>Funny</p>
+        <p className='user'>Amil Safarov</p>
+    </li>
 </ul>
     </nav>
 </>
     }else{
    return<>
-    <ul className='ul' style={pr?{width:'200px',fontSize:'12px'}:{}} onClick={(e)=>{
+    <ul className='ul'  onClick={(e)=>{
    console.log( e.target)
 
     }}>
