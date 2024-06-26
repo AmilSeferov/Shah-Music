@@ -203,5 +203,13 @@ header {
 }
 main{
   display: flex;
+  aside{
+    margin: 70px 0 0 90px;
+    min-height: calc(100vh - 70px);
+    border-left: 0.5px dashed rgb(175, 146, 146);
+    padding: 30px;
+    max-width: 1390px;
+    
+  }
   
 }

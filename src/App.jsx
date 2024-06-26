@@ -3,14 +3,23 @@ import './App.css'
 import { Nav } from './nav/nav';
 import { Home } from './pages/Home/home';
 import { Discovery } from './pages/Discovery/discovery';
+import { useState } from 'react';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
+  const [style,setstyle]=useState(false)
   return <>
       <header>
-        <div className="left-content">
+        <div  onClick={()=>{
+          if(style){
+            setstyle(false)
+          }else{
+            setstyle(true)
+          }
+            console.log(style)
+            
+          }} className="left-content">
           <label className="burger" htmlFor="burger">
-            <input type="checkbox" id="burger" />
             <span></span>
             <span></span>
             <span></span>
@@ -47,8 +56,10 @@ export function App(){
         </div>
       </header>
       <main>
-        <Nav/>
-        <aside>
+       <Nav pr={style}/>
+       
+       
+        <aside style={style?{width:'1290px',marginLeft:"210px"}:{}}>
         <Routes >
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Discovery' element={<Discovery/>}></Route>

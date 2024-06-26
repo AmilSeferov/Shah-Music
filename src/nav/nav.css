@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC:wght@100..400&display=swap");
-ul {
+.ul {
+  font-size: 10px;
   width: 80px;
   height: calc(100vh - 70px);
   padding: 10px;
@@ -11,9 +12,10 @@ ul {
   top: 70px;
 
   li {
+   
     cursor: pointer;
     z-index: 2;
-    width: 60px;
+   
     height: 60px;
     border-radius: 10px;
     /* background-color: rgb(82, 82, 81); */
@@ -21,20 +23,148 @@ ul {
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
+   
     a{
+      width: 100%;
       color: white;
       text-decoration: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      
+      
     }
     .title {
       font-family: "Playwrite AU VIC";
-      font-size: 10px;
+      /* margin:0 0 0 10px; */
+      height:20px ;
+      align-self:baseline ;
   }
   }
   li:hover{
     background-color: rgb(82, 82, 81);
   }
+}
+nav{
+  height: calc(100vh - 70px);
+  border-right: 0.5px dashed rgb(175, 146, 146);
+  position: fixed;
+  top: 70px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+.ul1 {
+  font-size: 12px;
+  width: 180px;
+  padding: 10px;
+  
+
+  border-bottom: 0.5px dashed rgb(175, 146, 146);
+  color: aliceblue;
+  display: flex;
+
+  flex-direction: column;
+ 
+
+  li {
+   
+    cursor: pointer;
+    z-index: 2;
+   
+    height: 40px;
+    border-radius: 10px;
+    /* background-color: rgb(82, 82, 81); */
+    padding: 5px;
+    margin-bottom: 20px;
+    display: flex;
+   
+    a{
+      width: 100%;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: center; */
+      
+      
+    }
+    .title {
+      font-family: "Playwrite AU VIC";
+      margin:2px 0 0 10px;
+      height:20px ;
+      align-self:baseline ;
+  }
+  }
+  li:hover{
+    background-color: rgb(82, 82, 81);
+  }
+}
+.button {
+  margin: 10px 0;
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(25px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  stroke: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+.list{
+  
+}
 }
