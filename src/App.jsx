@@ -6,6 +6,7 @@ import { Discovery } from './pages/Discovery/discovery';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addlist } from './reducers/reduce';
+import { Play } from './pages/playpage/play';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
@@ -63,12 +64,13 @@ export function App(){
        
        
         <aside style={style?{width:'1290px',marginLeft:"210px"}:{}}>
-        <Routes >
+        {/* <Routes >
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Discovery' element={<Discovery/>}></Route>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/' element={<Home/>}></Route>
-        </Routes>
+        </Routes> */}
+        <Play/>
         </aside>
         {/* <Home/> */}
       </main>
