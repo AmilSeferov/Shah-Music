@@ -5,8 +5,11 @@ import { SiYoutubemusic } from "react-icons/si";
 import { MdWorkspacePremium } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addlist } from '../reducers/reduce';
 export const Nav=({pr})=>{
     const [style, setstyle]=useState([1,0,0,0])
+    const dispatch=useDispatch()
     if(pr){
 return<>
 <nav>
@@ -48,10 +51,12 @@ return<>
             </Link>
         </li>
     </ul>
-    <button type="button" className="button">
+    <div className="btn">
+    <button onClick={()=>dispatch(addlist())} type="button" className="button">
   <span className="button__text">Add List</span>
-  <span className="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+  <span className="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" stroke="currentColor" height="24" fill="none" className="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
 </button>
+</div>
 <ul className='list'>
     <li>
         <p className='listName'>Funny</p>

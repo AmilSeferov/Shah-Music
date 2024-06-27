@@ -4,10 +4,14 @@ import { Nav } from './nav/nav';
 import { Home } from './pages/Home/home';
 import { Discovery } from './pages/Discovery/discovery';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addlist } from './reducers/reduce';
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
-  const [add,setadd]=useState(false);
+  const dispatch=useDispatch()
+  const add=useSelector((state)=>state.music.addlist)
+  console.log(add)
   const [style,setstyle]=useState(false);
   return <>
       <header>
@@ -16,9 +20,7 @@ export function App(){
             setstyle(false)
           }else{
             setstyle(true)
-          }
-            console.log(style)
-            
+          }            
           }} className="left-content">
           <label className="burger" htmlFor="burger">
             <span></span>
@@ -81,7 +83,7 @@ export function App(){
         </select>
         </form>
         <div>
-          <button className='cancel'>Cancel</button>
+          <button onClick={()=>dispatch(addlist())} className='cancel'>Cancel</button>
           <button className='add'>Add</button>
         </div>
         

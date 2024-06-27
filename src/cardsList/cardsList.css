@@ -7,14 +7,15 @@
  }
     .list{
         overflow-x: hidden;
-        /* margin-top: 10px; */
+      
         display: flex;
 
     }
     .list:hover{
         overflow-x: auto;
         scrollbar-color:  rgb(67, 67, 66) black;
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth; */
+        scrollbar-width:thin ;
     }
 }
    
