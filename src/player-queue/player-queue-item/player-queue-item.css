@@ -1,0 +1,61 @@
+.p_q_item{
+    width: 95%;
+    padding: 5px;
+    height: 50px;
+    background-color:transparent; 
+    border-bottom: 1px solid #232323;
+    margin-top: 10px;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    .title{
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100%  - 60px );
+        button{
+            background-color: transparent;
+            color: #474747;
+            border: 0;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            display: none;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40px;
+            .autor{
+                color: #838383;
+                font-size: 13px;
+            }
+        }
+        span{
+            color: #d0d0d0;
+        }
+        .time{
+color: #ababab;
+        }
+        button:hover{
+            background-color: rgb(57, 57, 57);
+        }
+    }
+    .img{
+        background-image: url('./../../bmw.jpg');
+        width: 40px;
+        height: 100%;
+        background-size:cover;
+        margin: 0 20px  0 0;
+    }
+}
+.p_q_item:hover{
+    .title{
+        button{
+            display: block;
+        }
+        .time{
+            display: none;
+        }
+    }
+}
