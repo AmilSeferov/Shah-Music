@@ -36,7 +36,7 @@ return<>
             setstyle([0,0,1,0])
         }}
         style={style[2]?{backgroundColor:' rgb(82, 82, 81)' }:{}}>
-        <Link to='/'>
+        <Link to='/P'>
         <SiYoutubemusic style={{fontSize:'25px'}}/>
             <p className='title'>Bookcase</p>
             </Link>
@@ -45,7 +45,7 @@ return<>
             setstyle([0,0,0,1])
         }} 
         style={style[3]?{backgroundColor:' rgb(82, 82, 81)' }:{}}>
-        <Link to='/'>
+        <Link to='/P'>
         <MdWorkspacePremium style={{fontSize:'25px'}}/>
             <p className='title'>LevelUp</p>
             </Link>

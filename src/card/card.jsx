@@ -1,11 +1,12 @@
 import './card.css'
 import './../../bmw.jpg'
-export const Card=()=>{
+export const Card=({artist,images})=>{
+    console.log(images)
     return<>
     <div className="card-container">
-        <img src="./bmw.jpg" alt="" />
+        {/* <div style={{backgroundImage:`${images}`}} className="img"></div> */}
         <div  className="title">
-            <p>rasim cek</p>
+            <p>{artist}</p>
             <p>narmalni</p>
         </div>
     </div>

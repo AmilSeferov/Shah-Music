@@ -1,29 +1,15 @@
 import { Card } from '../card/card';
 import './cardsList.css'
 
-export const CardsList = () => {
+export const CardsList = ({artists,images,index}) => {
+// console.log(images[0])
   return (
     <>
+
       <div className="cardsList">
         <h1 className="red">Famous</h1>
         <div className="list">
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-
+          {/* <Card artist={artists} images={images} key={index}/> */}
         </div>
       </div>
     </>

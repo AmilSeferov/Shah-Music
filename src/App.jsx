@@ -3,18 +3,58 @@ import './App.css'
 import { Nav } from './nav/nav';
 import { Home } from './pages/Home/home';
 import { Discovery } from './pages/Discovery/discovery';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addlist } from './reducers/reduce';
+import { addlist, fetchMusics } from './reducers/reduce';
 import { Play } from './pages/playpage/play';
+// import { Play } from './pages/playpage/play';
+// import { Players } from './player/player.jsx';
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
 export function App(){
+const [token,settoken]=useState("")
+
+    const CLIENT_ID = "c6d53315404e4ceaa6f7005ca7b114ee";
+  const CLIENT_SECRET = "eab8fac42cfa4a1e962c22f66039315a";
+
+  useEffect(() => {
+    var authParameters = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body:
+        "grant_type=client_credentials&client_id=" +
+        CLIENT_ID +
+        "&client_secret=" +
+        CLIENT_SECRET,
+    };
+
+    fetch(`https://accounts.spotify.com/api/token`, authParameters)
+      .then((res) => res.json())
+      .then((data) =>settoken(data.access_token));
+  }, []);
+  var trackParameters = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  };
+
+  useEffect(() => {
+    if(token) {
+      dispatch(fetchMusics(trackParameters));
+    }
+    // dispatch(getMusics(trackParameters));
+  }, [token]);
+
   const dispatch=useDispatch()
   const add=useSelector((state)=>state.music.addlist)
-  console.log(add)
+  const data=useSelector((state)=>state.music.data)
+  // console.log(data)
   const [style,setstyle]=useState(false);
-  return <>
+  return <> 
+  
       <header>
         <div  onClick={()=>{
           if(style){
@@ -64,15 +104,13 @@ export function App(){
        
        
         <aside style={style?{width:'1290px',marginLeft:"210px"}:{}}>
-        {/* <Routes >
+        <Routes >
           <Route path='/' element={<Home/>}></Route>
           <Route path='/Discovery' element={<Discovery/>}></Route>
+          <Route path='/P' element={<Play/>}></Route>
           <Route path='/' element={<Home/>}></Route>
-          <Route path='/' element={<Home/>}></Route>
-        </Routes> */}
-        <Play/>
+        </Routes>
         </aside>
-        {/* <Home/> */}
       </main>
       <div style={add?{display:'flex'}:{display:'none'}} className="addListContainer">
         <form action="">
